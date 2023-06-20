@@ -1,0 +1,48 @@
+using System;
+interface IShape
+{
+	double CalculateArea();
+	double CalculatePerimeter();
+}
+class Rectangle : IShape
+{
+	public double Length { get; set; }
+	public double Width { get; set; }
+	public double CalculateArea()
+	{
+		return Length * Width;
+	}
+	public double CalculatePerimeter()
+	{
+		return 2 * (Length + Width);
+	}
+}
+class Square : IShape
+{
+	public double Side { get; set; }
+	public double CalculateArea()
+	{
+		return Side * Side;
+	}
+	public double CalculatePerimeter()
+	{
+		return 4 * Side;
+	}
+}
+class Program
+{
+	static void Main()
+	{
+		Rectangle rectangle = new Rectangle();
+		rectangle.Length = 7;
+		rectangle.Width = 4;
+		double rectangleArea = rectangle.CalculateArea();
+		double rectanglePerimeter = rectangle.CalculatePerimeter();
+		Console.WriteLine($"Rectangle - Area: {rectangleArea}, Perimeter: {rectanglePerimeter}");
+		Square square = new Square();
+		square.Side = 4;
+		double squareArea = square.CalculateArea();
+		double squarePerimeter = square.CalculatePerimeter();
+		Console.WriteLine($"Square - Area: {squareArea}, Perimeter: {squarePerimeter}");
+	}
+}
