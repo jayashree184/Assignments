@@ -1,0 +1,15 @@
+using System;
+class Program
+{
+	static void Main(string[] args)
+	{
+		Console.Write("Input the string: ");
+		string input = Console.ReadLine();
+		Console.Write("The characters of the string are: ");
+		foreach (char c in input)
+		{
+			Console.Write(c + " ");
+		}
+		Console.WriteLine();
+	}
+}
